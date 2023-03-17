@@ -1,0 +1,6 @@
+https://huggingface.co/spaces/vinith/Crop-Disease-Identification/blob/58afbf0c6ce2e31cc114b99e100997b8a200e23c/RESNET50.h5
+
+Git LFS Details
+SHA256: 9eee2c60d740cbb615f525f4064dee5e539e76ee190f5d3cd1970f3189674d62
+Pointer size: 134 Bytes
+Size of remote file: 103 MB
