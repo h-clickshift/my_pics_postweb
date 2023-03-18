@@ -1,6 +1,7 @@
 from flask import Flask, request, render_template
 import tensorflow as tf
-from tensorflow.keras.applications.resnet50 import ResNet50, preprocess_input, decode_predictions
+from tensorflow.keras.applications.resnet50 import preprocess_input, decode_predictions
+from keras.applications.resnet import ResNet50
 from PIL import Image
 import numpy as np
 import os
@@ -20,10 +21,8 @@ def upload():
     filepath = os.path.join(app.config['UPLOAD_FOLDER'], filename)
     img_file.save(filepath)
 
-    # Load the pre-trained ResNet50 model
-    model_path = 'models/resnet50.h5'
-    model = ResNet50(weights=model_path)
 
+    model = ResNet50(weights='imagenet')
     # Preprocess the image
     img = Image.open(filepath)
     img = img.resize((224, 224))
