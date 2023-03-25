@@ -1,4 +1,8 @@
 # my_pics_postweb
-web application to post my camera pics with AI model auto labeled
-ChatGpt and I contribute for this project.
-But I do not have any experience on web application development...
+* Web application labels Pic with RESNET50 model behined.  
+
+* Develop without any frontend skills, chatgpt helps.
+
+* the demo  
+[he is dog](app/static/215313.png)
+
