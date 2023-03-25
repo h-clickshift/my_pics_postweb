@@ -7,7 +7,7 @@ import numpy as np
 import os
 
 app = Flask(__name__)
-app.config['UPLOAD_FOLDER'] = 'uploads'
+app.config['UPLOAD_FOLDER'] = 'static/imgs'
 
 @app.route('/')
 def index():
@@ -18,6 +18,7 @@ def upload():
     # Get the uploaded image file
     img_file = request.files['image']
     filename = img_file.filename
+    print(os.getcwd(), filename)
     filepath = os.path.join(app.config['UPLOAD_FOLDER'], filename)
     img_file.save(filepath)
 
@@ -32,12 +33,14 @@ def upload():
     preds = model.predict(np.array([x]))
 
     # Decode the predictions and return the top 3 labels
-    decoded_preds = decode_predictions(preds, top=3)[0]
+    decoded_preds = decode_predictions(preds, top=1)[0]
     labels = []
     for label in decoded_preds:
         labels.append(label[1])
 
-    return render_template('result.html', labels=labels)
+    # note image_path is based on result.html
+    image_path = "../static/imgs/{}".format(filename)
+    return render_template('result.html', labels=labels, image_path = image_path)
 
 if __name__ == '__main__':
     app.run(debug=True)

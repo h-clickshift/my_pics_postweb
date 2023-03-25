@@ -2,6 +2,7 @@
 
 {% block content %}
   <h1>Image Classifier Results</h1>
+ <img src="{{ image_path }}" alt="input image" width="500px" height="500px">
   <ul>
   {% for label in labels %}
     <li>{{ label }}</li>
