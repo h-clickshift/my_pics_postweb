@@ -4,5 +4,7 @@
 * Develop without any frontend skills, chatgpt helps.
 
 * the demo  
-[he is dog](app/static/215313.png)
+![home](app/static/220336.png )  
+
+![he is dog](app/static/215313.png)
 
